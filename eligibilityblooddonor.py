@@ -1,13 +1,27 @@
-age = int(input("Enter your age: "))
-try:
-    age = int(input("Enter your age: "))
-    weight = int(input("Enter your weight: "))
-    if age < 0 or weight < 0:
-        print("Enter a proper weight/age")
+def check(a):
+    try:
+        b = float(a)
+        if b < 0:
+            return "negative"
+        else:
+            return True
+    except ValueError:
+        return False
+age = input("Enter your age: ")
+if check(age) == False:
+    print("Please enter a number")
+elif check(age) == "negative":
+    print("Please enter positive number")
+else:
+    weight = input("Enter your weight: ")
+    if check(weight) == False:
+        print("Please enter a number")
+    elif check(weight) == "negative":
+        print("Please enter positive number")
     else:
-        if age >= 16 and weight >= 50:
+        x = float(weight)
+        y = float(age)
+        if x >= 50 and y >= 16:
             print("You are eligible")
         else:
             print("You are not eligible")
-except ValueError:
-    print("Enter a number")
