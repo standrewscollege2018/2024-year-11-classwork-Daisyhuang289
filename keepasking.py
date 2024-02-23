@@ -2,7 +2,7 @@ lst = []
 name = input()
 y = name.lower()
 while y != "stop":
-    if name == "":
+    if name.strip(" ") == "":
         print("Enter a valid name")
         name = input()
         y = name.lower()
