@@ -1,3 +1,4 @@
+#Function which prints the list of cars
 def av_cars(x):
     print("Welcome to the University vehicle rental system\n")
     print("The vehicles are:")
@@ -26,10 +27,12 @@ while ask == True:
         #Check whether the value is 0, if yes end loop
         elif int(num) == 0:
             ask = False
+        #Check whether all cars have been rented or not
+        elif len(names) == 8:
+            ask = False
         #Check whether the vehicle is already rented
         elif num in av:
             print("**This vehicle is already booked. Please choose another**\n")
-            av_cars(all_cars)
         #Add the information of the successfully booked vehicle into lists
         else:
             av.append(num)
@@ -59,5 +62,5 @@ else:
     x = 0
     #Printing the daily summary
     for i in range(len(names)):
-        print(f"{car[x]} - {names[x]}")
+        print(f"{cars_rented[x]} - {names[x]}")
         x += 1
